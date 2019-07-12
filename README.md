@@ -5,3 +5,5 @@ Add the following two lines to /opt/splunk/etc/system/local/web.conf.  I had to 
 root_endpoint = /splunk
 tools.proxy.on = True
 ```
+
+Now, create a virtualhost in /etc/http 
