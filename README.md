@@ -6,7 +6,7 @@ root_endpoint = /splunk
 tools.proxy.on = True
 ```
 
-Now, create a virtualhost in apache.  This also enables TLS otherwise your LDAP creds will be sent in plaintext.  A few othber options enabled due to using self-signed certs.  For example: /etc/httpd/conf.d
+Now, create a virtualhost in apache.  This also enables TLS otherwise your LDAP creds will be sent in plaintext.  A few other options enabled due to using self-signed certs.  For example: /etc/httpd/conf.d
 ```
 <virtualhost *:443>
      ServerAdmin user@domain.com
@@ -31,7 +31,7 @@ Now, create a virtualhost in apache.  This also enables TLS otherwise your LDAP 
      AuthName "Secure Splunk Login"
      AuthType Basic
      AuthBasicProvider ldap
-     AuthLDAPURL ldap://admin-01/dc=hostname,dc=com?uid?sub?(objectClass=*)
+     AuthLDAPURL ldap://hostname/dc=site,dc=com?uid?sub?(objectClass=*)
      Require ldap-filter objectClass=posixAccount
 </proxy>
 ```
